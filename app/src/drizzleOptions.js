@@ -1,4 +1,4 @@
-import Storage from '../../build/contracts/Storage.json';
+import Storage from './contracts/Storage.json';
 
 const options = {
 	contracts: [Storage],
