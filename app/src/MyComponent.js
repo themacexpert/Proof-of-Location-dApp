@@ -17,5 +17,5 @@ const MyComponent = () => (
 		<ContractForm contract="Storage" method="setData" labels={['new value of the `data`']}/>
 	</div>
 
-);
+); 
 export default MyComponent;
