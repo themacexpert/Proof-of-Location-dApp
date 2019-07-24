@@ -2,9 +2,14 @@
   "contractName": "Storage",
   "abi": [
     {
-      "constant": true,
-      "inputs": [],
-      "name": "data",
+      "constant": false,
+      "inputs": [
+        {
+          "name": "x",
+          "type": "string"
+        }
+      ],
+      "name": "set",
       "outputs": [
         {
           "name": "",
@@ -12,13 +17,13 @@
         }
       ],
       "payable": false,
-      "stateMutability": "view",
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
       "constant": true,
       "inputs": [],
-      "name": "getData",
+      "name": "get",
       "outputs": [
         {
           "name": "",
@@ -44,12 +49,12 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.0+commit.1d4f565a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"getData\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_data\",\"type\":\"string\"}],\"name\":\"setData\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"data\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/developer/locationdapp/Proof-of-Location-dApp/contracts/Storage.sol\":\"Storage\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/developer/locationdapp/Proof-of-Location-dApp/contracts/Storage.sol\":{\"keccak256\":\"0x4c0cd1f023aaae72d5d5959ffe91d89d92e37cf3b53a4a1f53b84ab7cf721dda\",\"urls\":[\"bzzr://6fa2fd9d2d1b09c0d4a6a009a5c4609a8a9059ba18cc5b6b3097dbdc7943b5fd\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b50610429806100206000396000f3fe608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633bc5de301461005c57806347064d6a146100ec57806373d4a13a14610172575b600080fd5b34801561006857600080fd5b50610071610202565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100b1578082015181840152602081019050610096565b50505050905090810190601f1680156100de5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156100f857600080fd5b506101706004803603602081101561010f57600080fd5b810190808035906020019064010000000081111561012c57600080fd5b82018360208201111561013e57600080fd5b8035906020019184600183028401116401000000008311171561016057600080fd5b90919293919293905050506102a4565b005b34801561017e57600080fd5b506101876102ba565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156101c75780820151818401526020810190506101ac565b50505050905090810190601f1680156101f45780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b606060008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561029a5780601f1061026f5761010080835404028352916020019161029a565b820191906000526020600020905b81548152906001019060200180831161027d57829003601f168201915b5050505050905090565b8181600091906102b5929190610358565b505050565b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103505780601f1061032557610100808354040283529160200191610350565b820191906000526020600020905b81548152906001019060200180831161033357829003601f168201915b505050505081565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061039957803560ff19168380011785556103c7565b828001600101855582156103c7579182015b828111156103c65782358255916020019190600101906103ab565b5b5090506103d491906103d8565b5090565b6103fa91905b808211156103f65760008160009055506001016103de565b5090565b9056fea165627a7a7230582042e40a13e35d918e00d789e269122afbb7b84efd0748869efcbd157bff9366dd0029",
-  "deployedBytecode": "0x608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633bc5de301461005c57806347064d6a146100ec57806373d4a13a14610172575b600080fd5b34801561006857600080fd5b50610071610202565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100b1578082015181840152602081019050610096565b50505050905090810190601f1680156100de5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156100f857600080fd5b506101706004803603602081101561010f57600080fd5b810190808035906020019064010000000081111561012c57600080fd5b82018360208201111561013e57600080fd5b8035906020019184600183028401116401000000008311171561016057600080fd5b90919293919293905050506102a4565b005b34801561017e57600080fd5b506101876102ba565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156101c75780820151818401526020810190506101ac565b50505050905090810190601f1680156101f45780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b606060008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561029a5780601f1061026f5761010080835404028352916020019161029a565b820191906000526020600020905b81548152906001019060200180831161027d57829003601f168201915b5050505050905090565b8181600091906102b5929190610358565b505050565b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103505780601f1061032557610100808354040283529160200191610350565b820191906000526020600020905b81548152906001019060200180831161033357829003601f168201915b505050505081565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061039957803560ff19168380011785556103c7565b828001600101855582156103c7579182015b828111156103c65782358255916020019190600101906103ab565b5b5090506103d491906103d8565b5090565b6103fa91905b808211156103f65760008160009055506001016103de565b5090565b9056fea165627a7a7230582042e40a13e35d918e00d789e269122afbb7b84efd0748869efcbd157bff9366dd0029",
-  "sourceMap": "68:200:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;68:200:1;;;;;;;",
-  "deployedSourceMap": "68:200:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;112:78;;8:9:-1;5:2;;;30:1;27;20:12;5:2;112:78:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;112:78:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;194:72;;8:9:-1;5:2;;;30:1;27;20:12;5:2;194:72:1;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;194:72:1;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;194:72:1;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;194:72:1;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;194:72:1;;;;;;;;;;;;;;;89:18;;8:9:-1;5:2;;;30:1;27;20:12;5:2;89:18:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;89:18:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;112:78;154:13;181:4;174:11;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;112:78;:::o;194:72::-;256:5;;249:4;:12;;;;;;;:::i;:::-;;194:72;;:::o;89:18::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;68:200::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "//Placeholder Contract for the timebeing.\npragma solidity >=0.5.0;\n\ncontract Storage {\n  string public data;\n\n  function getData() view external returns (string memory){\n    return data;\n  }\n\n  function setData(string calldata _data) external {\n    data = _data;\n  }\n}\n",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.0+commit.1d4f565a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"x\",\"type\":\"string\"}],\"name\":\"set\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"get\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/developer/locationdapp/Proof-of-Location-dApp/contracts/Storage.sol\":\"Storage\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/developer/locationdapp/Proof-of-Location-dApp/contracts/Storage.sol\":{\"keccak256\":\"0x85adf0ecbfd4956c2343e139fe8bd7bd2cf87d0b954e7715ff00b44a3f673642\",\"urls\":[\"bzzr://b0235a10fe00dc6c63b2093043c2c75898cf2d498708ceb1ad96b803f60a83fc\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610336806100206000396000f3fe60806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634ed3885e146100515780636d4ce63c14610119575b600080fd5b34801561005d57600080fd5b506101176004803603602081101561007457600080fd5b810190808035906020019064010000000081111561009157600080fd5b8201836020820111156100a357600080fd5b803590602001918460018302840111640100000000831117156100c557600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506101a9565b005b34801561012557600080fd5b5061012e6101c3565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561016e578082015181840152602081019050610153565b50505050905090810190601f16801561019b5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b80600090805190602001906101bf929190610265565b5050565b606060008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561025b5780601f106102305761010080835404028352916020019161025b565b820191906000526020600020905b81548152906001019060200180831161023e57829003601f168201915b5050505050905090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106102a657805160ff19168380011785556102d4565b828001600101855582156102d4579182015b828111156102d35782518255916020019190600101906102b8565b5b5090506102e191906102e5565b5090565b61030791905b808211156103035760008160009055506001016102eb565b5090565b9056fea165627a7a723058204c2fb684b022c69946a3fd0ebe3cc958d258b99498f9ddf83bcd63196c14b37b0029",
+  "deployedBytecode": "0x60806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634ed3885e146100515780636d4ce63c14610119575b600080fd5b34801561005d57600080fd5b506101176004803603602081101561007457600080fd5b810190808035906020019064010000000081111561009157600080fd5b8201836020820111156100a357600080fd5b803590602001918460018302840111640100000000831117156100c557600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506101a9565b005b34801561012557600080fd5b5061012e6101c3565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561016e578082015181840152602081019050610153565b50505050905090810190601f16801561019b5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b80600090805190602001906101bf929190610265565b5050565b606060008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561025b5780601f106102305761010080835404028352916020019161025b565b820191906000526020600020905b81548152906001019060200180831161023e57829003601f168201915b5050505050905090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106102a657805160ff19168380011785556102d4565b828001600101855582156102d4579182015b828111156102d35782518255916020019190600101906102b8565b5b5090506102e191906102e5565b5090565b61030791905b808211156103035760008160009055506001016102eb565b5090565b9056fea165627a7a723058204c2fb684b022c69946a3fd0ebe3cc958d258b99498f9ddf83bcd63196c14b37b0029",
+  "sourceMap": "68:182:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;68:182:1;;;;;;;",
+  "deployedSourceMap": "68:182:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;109:60;;8:9:-1;5:2;;;30:1;27;20:12;5:2;109:60:1;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;109:60:1;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;109:60:1;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;109:60:1;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;109:60:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;109:60:1;;;;;;;;;;;;;;;;;;173:75;;8:9:-1;5:2;;;30:1;27;20:12;5:2;173:75:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;173:75:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;109:60;163:1;152:8;:12;;;;;;;;;;;;:::i;:::-;;109:60;:::o;173:75::-;209:13;235:8;228:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;173:75;:::o;68:182::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "//Placeholder Contract for the timebeing.\npragma solidity >=0.5.0;\n\ncontract Storage {\n  string ipfsHash;\n\n  function set(string memory x) public {\n    ipfsHash = x;\n  }\n\n  function get() public view returns (string memory){\n  \treturn ipfsHash;\n  }\n}\n",
   "sourcePath": "/Users/developer/locationdapp/Proof-of-Location-dApp/contracts/Storage.sol",
   "ast": {
     "absolutePath": "/Users/developer/locationdapp/Proof-of-Location-dApp/contracts/Storage.sol",
@@ -91,10 +96,10 @@
           {
             "constant": false,
             "id": 60,
-            "name": "data",
+            "name": "ipfsHash",
             "nodeType": "VariableDeclaration",
             "scope": 79,
-            "src": "89:18:1",
+            "src": "89:15:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -112,47 +117,105 @@
               }
             },
             "value": null,
-            "visibility": "public"
+            "visibility": "internal"
           },
           {
             "body": {
-              "id": 67,
+              "id": 69,
               "nodeType": "Block",
-              "src": "168:22:1",
+              "src": "146:23:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 65,
+                    "id": 67,
                     "name": "data",
-                    "nodeType": "Identifier",
+                    "nodeType": "Assignment",
                     "overloadedDeclarations": [],
                     "referencedDeclaration": 60,
-                    "src": "181:4:1",
+                    "src": "152:12:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
+                    },
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 65,
+                      "name": "ipfsHash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 60,
+                      "src": "152:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 66,
+                      "name": "x",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 62,
+                      "src": "163:1:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
                     }
                   },
                   "functionReturnParameters": 64,
-                  "id": 66,
-                  "nodeType": "Return",
-                  "src": "174:11:1"
+                  "id": 68,
+                  "nodeType": "ExpressionStatement",
+                  "src": "152:12:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 68,
+            "id": 70,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
-            "name": "getData",
+            "name": "set",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 61,
+              "id": 63,
               "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "128:2:1"
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 62,
+                  "name": "x",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70,
+                  "src": "122:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 61,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "122:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "121:17:1"
             },
             "returnParameters": {
               "id": 64,
@@ -185,19 +248,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "153:15:1"
+              "src": "146:0:1"
             },
             "scope": 79,
-            "src": "112:78:1",
-            "stateMutability": "view",
+            "src": "109:60:1",
+            "stateMutability": "nonpayable",
             "superFunction": null,
-            "visibility": "external"
+            "visibility": "public"
           },
           {
             "body": {
               "id": 77,
               "nodeType": "Block",
-              "src": "243:23:1",
+              "src": "223:25:1",
               "statements": [
                 {
                   "expression": {
@@ -220,7 +283,7 @@
                         "typeString": "string storage ref"
                       }
                     },
-                    "nodeType": "Assignment",
+                    "nodeType": "Identifier",
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
@@ -235,15 +298,19 @@
                         "typeString": "string calldata"
                       }
                     },
-                    "src": "249:12:1",
+                    "src": "235:8:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
-                    }
+                    },
+                    "name": "ipfsHash",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 60
                   },
                   "id": 76,
-                  "nodeType": "ExpressionStatement",
-                  "src": "249:12:1"
+                  "nodeType": "Return",
+                  "src": "228:15:1",
+                  "functionReturnParameters": 74
                 }
               ]
             },
@@ -252,7 +319,7 @@
             "implemented": true,
             "kind": "function",
             "modifiers": [],
-            "name": "setData",
+            "name": "get",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 71,
@@ -285,26 +352,53 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "210:23:1"
+              "src": "185:2:1"
             },
             "returnParameters": {
-              "id": 72,
+              "id": 74,
               "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "243:0:1"
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 73,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 78,
+                  "src": "209:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 72,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "209:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "208:15:1"
             },
             "scope": 79,
-            "src": "194:72:1",
-            "stateMutability": "nonpayable",
+            "src": "173:75:1",
+            "stateMutability": "view",
             "superFunction": null,
-            "visibility": "external"
+            "visibility": "public"
           }
         ],
         "scope": 80,
-        "src": "68:200:1"
+        "src": "68:182:1"
       }
     ],
-    "src": "42:227:1"
+    "src": "42:209:1"
   },
   "legacyAST": {
     "absolutePath": "/Users/developer/locationdapp/Proof-of-Location-dApp/contracts/Storage.sol",
@@ -346,10 +440,10 @@
           {
             "constant": false,
             "id": 60,
-            "name": "data",
+            "name": "ipfsHash",
             "nodeType": "VariableDeclaration",
             "scope": 79,
-            "src": "89:18:1",
+            "src": "89:15:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -367,47 +461,105 @@
               }
             },
             "value": null,
-            "visibility": "public"
+            "visibility": "internal"
           },
           {
             "body": {
-              "id": 67,
+              "id": 69,
               "nodeType": "Block",
-              "src": "168:22:1",
+              "src": "146:23:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 65,
+                    "id": 67,
                     "name": "data",
-                    "nodeType": "Identifier",
+                    "nodeType": "Assignment",
                     "overloadedDeclarations": [],
                     "referencedDeclaration": 60,
-                    "src": "181:4:1",
+                    "src": "152:12:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
+                    },
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 65,
+                      "name": "ipfsHash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 60,
+                      "src": "152:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 66,
+                      "name": "x",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 62,
+                      "src": "163:1:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
                     }
                   },
                   "functionReturnParameters": 64,
-                  "id": 66,
-                  "nodeType": "Return",
-                  "src": "174:11:1"
+                  "id": 68,
+                  "nodeType": "ExpressionStatement",
+                  "src": "152:12:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 68,
+            "id": 70,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
-            "name": "getData",
+            "name": "set",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 61,
+              "id": 63,
               "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "128:2:1"
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 62,
+                  "name": "x",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70,
+                  "src": "122:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 61,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "122:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "121:17:1"
             },
             "returnParameters": {
               "id": 64,
@@ -440,19 +592,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "153:15:1"
+              "src": "146:0:1"
             },
             "scope": 79,
-            "src": "112:78:1",
-            "stateMutability": "view",
+            "src": "109:60:1",
+            "stateMutability": "nonpayable",
             "superFunction": null,
-            "visibility": "external"
+            "visibility": "public"
           },
           {
             "body": {
               "id": 77,
               "nodeType": "Block",
-              "src": "243:23:1",
+              "src": "223:25:1",
               "statements": [
                 {
                   "expression": {
@@ -475,7 +627,7 @@
                         "typeString": "string storage ref"
                       }
                     },
-                    "nodeType": "Assignment",
+                    "nodeType": "Identifier",
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
@@ -490,15 +642,19 @@
                         "typeString": "string calldata"
                       }
                     },
-                    "src": "249:12:1",
+                    "src": "235:8:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
-                    }
+                    },
+                    "name": "ipfsHash",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 60
                   },
                   "id": 76,
-                  "nodeType": "ExpressionStatement",
-                  "src": "249:12:1"
+                  "nodeType": "Return",
+                  "src": "228:15:1",
+                  "functionReturnParameters": 74
                 }
               ]
             },
@@ -507,7 +663,7 @@
             "implemented": true,
             "kind": "function",
             "modifiers": [],
-            "name": "setData",
+            "name": "get",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 71,
@@ -540,26 +696,53 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "210:23:1"
+              "src": "185:2:1"
             },
             "returnParameters": {
-              "id": 72,
+              "id": 74,
               "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "243:0:1"
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 73,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 78,
+                  "src": "209:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 72,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "209:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "208:15:1"
             },
             "scope": 79,
-            "src": "194:72:1",
-            "stateMutability": "nonpayable",
+            "src": "173:75:1",
+            "stateMutability": "view",
             "superFunction": null,
-            "visibility": "external"
+            "visibility": "public"
           }
         ],
         "scope": 80,
-        "src": "68:200:1"
+        "src": "68:182:1"
       }
     ],
-    "src": "42:227:1"
+    "src": "42:209:1"
   },
   "compiler": {
     "name": "solc",
@@ -569,12 +752,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x467a3fb0761D24F112f4877abbE38508d43e1091",
-      "transactionHash": "0x91b47e5f54bfa06b939eb6748d391320e3990e2bcfa33bbfa396e547112961cc"
+      "address": "0x45a9522070342dcB580367ba3782e7e98391f5A6",
+      "transactionHash": "0x78a76e1361201201dc1ab002ce0bf939a5c73ee7122a8522f06fd7861163ade2"
     }
   },
   "schemaVersion": "3.0.9",
-  "updatedAt": "2019-07-06T17:39:55.497Z",
+  "updatedAt": "2019-07-24T01:22:56.954Z",
   "devdoc": {
     "methods": {}
   },
