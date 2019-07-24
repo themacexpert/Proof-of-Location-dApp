@@ -1,14 +1,14 @@
-//Placeholder Contract for the timebeing.
+//Contract to manage the ipfs hash / location of the data on IPFS.
 pragma solidity >=0.5.0;
 
 contract Storage {
-  string public data;
+  string ipfsHash;
 
-  function getData() view external returns (string memory){
-    return data;
+  function set(string memory x) public {
+    ipfsHash = x;
   }
 
-  function setData(string calldata _data) external {
-    data = _data;
+  function get() public view returns (string memory){
+  	return ipfsHash;
   }
 }
