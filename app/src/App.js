@@ -89,13 +89,14 @@ class App extends Component {
     return (
       <div className="App">
         <h1>IPFS File Upload DApp</h1>
-        <p>Your Image.</p>
+        <p>Using the below Upload feature will upload your image to IPFS</p>
         <h2>Upload Image</h2>
         <form onSubmit={this.onSubmit} action="">
           <input type='file' onChange={this.captureFile}/>
           <input type='submit' />
         </form>
-        <img src= {`https://gateway.ipfs.io/ipfs/${this.state.ipfsHash}`}  alt=""/>  
+        <img src= {`https://gateway.ipfs.io/ipfs/${this.state.ipfsHash}`}  alt=""/>
+        <h3>IPFS Hash: {this.state.ipfsHash}</h3>   
       </div>
     );
   }
