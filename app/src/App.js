@@ -9,7 +9,7 @@ import StorageContract from "./contracts/Storage.json";
 import getWeb3 from "./utils/getWeb3";
 
 class App extends Component {
-  state = { storageValue: 0, web3: null, accounts: null, contract: null };
+  state = { ipfsHash: 0, web3: null, accounts: null, contract: null };
 
   componentDidMount = async () => {
     try {
@@ -53,7 +53,7 @@ class App extends Component {
     const response = await contract.methods.get().call();
 
     // Update state with the result.
-    this.setState({ storageValue: response });
+    this.setState({ ipfsHash: response });
   };
 
   captureFile(event){
@@ -82,6 +82,11 @@ class App extends Component {
     } )
   }
 
+  onCommit(event){
+  	event.preventDefault();
+  	alert("This has been submitted!");
+  }
+
   render() {
     if (!this.state.web3) {
       return <div>Loading Web3, accounts, and contract...</div>;
@@ -97,6 +102,10 @@ class App extends Component {
         </form>
         <img src= {`https://gateway.ipfs.io/ipfs/${this.state.ipfsHash}`}  alt=""/>
         <h3>IPFS Hash: {this.state.ipfsHash}</h3>   
+        <h3>Commit to the Ethereum Blockchain</h3>
+        <form onSubmit={this.onCommit} action="" text="Commit">
+          <input type='submit' value="Commit" />
+        </form>
       </div>
     );
   }
