@@ -33,7 +33,7 @@ class App extends Component {
 
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
-      this.setState({ web3, accounts, contract: instance, buffer: null, ipfsHash: ''}, this.runExample);
+      this.setState({ web3, accounts, contract: instance, buffer: null, ipfsHash: ' '}, this.runExample);
     } catch (error) {
       // Catch any errors for any of the above operations.
       alert(
@@ -43,18 +43,18 @@ class App extends Component {
     }
   };
 
-  runExample = async () => {
-    const { accounts, contract } = this.state;
+  // runExample = async () => {
+  //   const { accounts, contract } = this.state;
 
-    // Stores a given value, 5 by default.
-    await contract.methods.set("five").send({ from: accounts[0] });
+  //   // Stores a given value, 5 by default.
+  //   //await contract.methods.set("five").send({ from: accounts[0] });
 
-    // Get the value from the contract to prove it worked.
-    const response = await contract.methods.get().call();
+  //   // Get the value from the contract to prove it worked.
+  //   const {response} = await contract.methods.get().call();
 
-    // Update state with the result.
-    this.setState({ ipfsHash: response });
-  };
+  //   // Update state with the result.
+  //   this.setState({ ipfsHash: response });
+  // };
 
   captureFile(event){
     event.preventDefault();
@@ -82,9 +82,27 @@ class App extends Component {
     } )
   }
 
-  onCommit(event){
-  	event.preventDefault();
-  	alert("This has been submitted!");
+  onCommit = async (event) => {
+	try {
+		event.preventDefault();
+		
+		// Get network provider and web3 instance.
+      const web3 = await getWeb3();
+
+      // Use web3 to get the user's accounts.
+      const accounts = await web3.eth.getAccounts();
+
+      // Get the contract instance.
+      const networkId = await web3.eth.net.getId();
+      const deployedNetwork = StorageContract.networks[networkId];
+      const instance = new web3.eth.Contract(
+        StorageContract.abi,
+        deployedNetwork && deployedNetwork.address,
+      );
+      alert("This has been submitted!" );
+  	} catch (error) {
+  		console.log("error logged");
+  	}  	
   }
 
   render() {
